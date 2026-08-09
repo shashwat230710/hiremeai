@@ -38,7 +38,7 @@
 
 :root {
   --radius: 0.75rem;
-  /* Deep navy base */
+  /* Deep navy base (Dark default) */
   --background: oklch(0.19 0.028 258);
   --foreground: oklch(0.96 0.006 250);
   --surface: oklch(0.23 0.03 258);
@@ -69,6 +69,30 @@
   );
   --shadow-elevated: 0 24px 60px -30px oklch(0 0 0 / 0.8);
   --shadow-accent: 0 18px 50px -22px color-mix(in oklab, var(--primary) 45%, transparent);
+}
+
+:root.light {
+  --background: oklch(0.98 0.005 240);
+  --foreground: oklch(0.18 0.02 250);
+  --surface: oklch(0.96 0.008 240);
+  --surface-raised: oklch(1 0 0);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.18 0.02 250);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.18 0.02 250);
+  --primary: oklch(0.48 0.16 195);
+  --primary-foreground: oklch(0.99 0 0);
+  --secondary: oklch(0.92 0.01 240);
+  --secondary-foreground: oklch(0.2 0.02 250);
+  --muted: oklch(0.92 0.01 240);
+  --muted-foreground: oklch(0.45 0.02 250);
+  --accent: oklch(0.48 0.16 195);
+  --accent-foreground: oklch(0.99 0 0);
+  --destructive: oklch(0.55 0.18 25);
+  --destructive-foreground: oklch(0.99 0 0);
+  --border: oklch(0 0 0 / 12%);
+  --input: oklch(0 0 0 / 14%);
+  --ring: oklch(0.48 0.16 195 / 40%);
 }
 
 @layer base {

@@ -10,7 +10,11 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as AnalyticsRouteImport } from './routes/analytics'
+import { Route as AtsRouteImport } from './routes/ats'
 import { Route as ChatRouteImport } from './routes/chat'
+import { Route as CoverLetterRouteImport } from './routes/cover-letter'
+import { Route as MockInterviewRouteImport } from './routes/mock-interview'
 import { Route as ProfileRouteImport } from './routes/profile'
 
 const IndexRoute = IndexRouteImport.update({
@@ -18,9 +22,29 @@ const IndexRoute = IndexRouteImport.update({
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AnalyticsRoute = AnalyticsRouteImport.update({
+  id: '/analytics',
+  path: '/analytics',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AtsRoute = AtsRouteImport.update({
+  id: '/ats',
+  path: '/ats',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ChatRoute = ChatRouteImport.update({
   id: '/chat',
   path: '/chat',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CoverLetterRoute = CoverLetterRouteImport.update({
+  id: '/cover-letter',
+  path: '/cover-letter',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const MockInterviewRoute = MockInterviewRouteImport.update({
+  id: '/mock-interview',
+  path: '/mock-interview',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ProfileRoute = ProfileRouteImport.update({
@@ -31,31 +55,69 @@ const ProfileRoute = ProfileRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/analytics': typeof AnalyticsRoute
+  '/ats': typeof AtsRoute
   '/chat': typeof ChatRoute
+  '/cover-letter': typeof CoverLetterRoute
+  '/mock-interview': typeof MockInterviewRoute
   '/profile': typeof ProfileRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/analytics': typeof AnalyticsRoute
+  '/ats': typeof AtsRoute
   '/chat': typeof ChatRoute
+  '/cover-letter': typeof CoverLetterRoute
+  '/mock-interview': typeof MockInterviewRoute
   '/profile': typeof ProfileRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/analytics': typeof AnalyticsRoute
+  '/ats': typeof AtsRoute
   '/chat': typeof ChatRoute
+  '/cover-letter': typeof CoverLetterRoute
+  '/mock-interview': typeof MockInterviewRoute
   '/profile': typeof ProfileRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/chat' | '/profile'
+  fullPaths:
+    | '/'
+    | '/analytics'
+    | '/ats'
+    | '/chat'
+    | '/cover-letter'
+    | '/mock-interview'
+    | '/profile'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/chat' | '/profile'
-  id: '__root__' | '/' | '/chat' | '/profile'
+  to:
+    | '/'
+    | '/analytics'
+    | '/ats'
+    | '/chat'
+    | '/cover-letter'
+    | '/mock-interview'
+    | '/profile'
+  id:
+    | '__root__'
+    | '/'
+    | '/analytics'
+    | '/ats'
+    | '/chat'
+    | '/cover-letter'
+    | '/mock-interview'
+    | '/profile'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AnalyticsRoute: typeof AnalyticsRoute
+  AtsRoute: typeof AtsRoute
   ChatRoute: typeof ChatRoute
+  CoverLetterRoute: typeof CoverLetterRoute
+  MockInterviewRoute: typeof MockInterviewRoute
   ProfileRoute: typeof ProfileRoute
 }
 
@@ -68,11 +130,39 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/analytics': {
+      id: '/analytics'
+      path: '/analytics'
+      fullPath: '/analytics'
+      preLoaderRoute: typeof AnalyticsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/ats': {
+      id: '/ats'
+      path: '/ats'
+      fullPath: '/ats'
+      preLoaderRoute: typeof AtsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/chat': {
       id: '/chat'
       path: '/chat'
       fullPath: '/chat'
       preLoaderRoute: typeof ChatRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/cover-letter': {
+      id: '/cover-letter'
+      path: '/cover-letter'
+      fullPath: '/cover-letter'
+      preLoaderRoute: typeof CoverLetterRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/mock-interview': {
+      id: '/mock-interview'
+      path: '/mock-interview'
+      fullPath: '/mock-interview'
+      preLoaderRoute: typeof MockInterviewRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/profile': {
@@ -87,7 +177,11 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AnalyticsRoute: AnalyticsRoute,
+  AtsRoute: AtsRoute,
   ChatRoute: ChatRoute,
+  CoverLetterRoute: CoverLetterRoute,
+  MockInterviewRoute: MockInterviewRoute,
   ProfileRoute: ProfileRoute,
 }
 export const routeTree = rootRouteImport
