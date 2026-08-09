@@ -2,7 +2,7 @@
   "name": "hiremeai-monorepo",
   "private": true,
   "scripts": {
-    "build": "cd frontend && npm install && npm run build && cd .. && node -e \"const fs=require('fs'); const src=fs.existsSync('frontend/.output/public')?'frontend/.output/public':(fs.existsSync('frontend/dist')?'frontend/dist':null); if(src){fs.cpSync(src, 'public', {recursive: true}); console.log('Copied output to root public/ folder!');}\"",
+    "build": "node build.js",
     "dev": "cd frontend && npm run dev"
   }
 }
