@@ -1,0 +1,1 @@
+import{i as e}from"./index-Dx1Xm8aT.js";var t=e();function n({className:e=``}){return(0,t.jsxs)(`span`,{className:`inline-flex items-center gap-1.5 rounded-full border border-primary/30 bg-primary/10 px-2.5 py-1 text-[11px] font-medium tracking-wide text-primary ${e}`,children:[(0,t.jsx)(`span`,{"aria-hidden":`true`,children:`✓`}),`Resume-grounded AI`]})}export{n as t};

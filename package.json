@@ -2,7 +2,7 @@
   "name": "hiremeai-monorepo",
   "private": true,
   "scripts": {
-    "build": "cd frontend && npm install && npm run build",
+    "build": "cd frontend && npm install && npm run build && node -e \"const fs=require('fs'); if(fs.existsSync('frontend/.vercel/output')){ fs.cpSync('frontend/.vercel/output', '.vercel/output', {recursive: true}); console.log('Successfully copied .vercel/output to root!'); }\"",
     "dev": "cd frontend && npm run dev"
   }
 }
